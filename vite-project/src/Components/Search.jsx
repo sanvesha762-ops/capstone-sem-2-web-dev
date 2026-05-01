@@ -5,9 +5,9 @@ const destinations = [
   { id: 1, name: "Goa", type: "Beach", rating: 4.8, img: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=500" },
   { id: 2, name: "Jaipur", type: "Culture", rating: 4.7, img: "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=500" },
   { id: 3, name: "Kerala", type: "Nature", rating: 4.9, img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=500" },
-  { id: 4, name: "Manali", type: "Mountains", rating: 4.6, img: "https://images.unsplash.com/photo-1605649487212-4dcf1b6245d5?w=500" },
-  { id: 5, name: "Udaipur", type: "Romance", rating: 4.9, img: "https://images.unsplash.com/photo-1615836245337-f589db29ab6e?w=500" },
-  { id: 6, name: "Agra", type: "History", rating: 4.5, img: "https://images.unsplash.com/photo-1564507592208-028f0907fc29?w=500" }
+  { id: 4, name: "Manali", type: "Mountains", rating: 4.6, img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500" },
+  { id: 5, name: "Udaipur", type: "Romance", rating: 4.9, img: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=500" },
+  { id: 6, name: "Agra", type: "History", rating: 4.5, img: "https://images.unsplash.com/photo-1548013146-72479768bada?w=500" }
 ];
 
 const Search = () => {
