@@ -1,0 +1,148 @@
+:root {
+  --main-theme: #6a1b9a;
+  --theme-light: #f3e5f5;
+  --theme-dark: #4a148c;
+  --accent: #9c27b0;
+  --text-main: #2c3e50;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fcfaff;
+  color: var(--text-main);
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(106, 27, 154, 0.1);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--main-theme);
+}
+
+/* Grid Layout */
+.itinerary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 30px 5%;
+}
+
+/* Purple Cards */
+.item-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid #efe5fd;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.item-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(106, 27, 154, 0.15);
+  border-color: var(--main-theme);
+}
+
+/* Image zoom inside cards */
+.card-img-container {
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.item-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+/* Ratings */
+.star.filled {
+  color: #ffca28; /* Gold stars look best with purple */
+}
+
+/* Footer */
+.site-footer {
+  background: var(--theme-dark);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 50px;
+}
+:root {
+  --main-theme: #6a1b9a;      /* Grape Purple */
+  --theme-dark: #4a148c;      /* Deep Violet */
+  --navbar-bg: #311b92;       /* Ultra Dark Purple for Nav */
+  --nav-text: #ffffff;
+}
+
+:root {
+  --theme-dark: #4a148c;      /* This is your Footer Purple */
+  --nav-text: #ffffff;
+  --main-theme: #6a1b9a;      /* Lighter accent purple */
+}
+
+/* Updated Navbar - Same color as Footer */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: var(--theme-dark); /* Matches Footer exactly */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo a {
+  color: white !important;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -1px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--nav-text);
+  font-weight: 500;
+  margin-left: 25px;
+  opacity: 0.9;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  color: #e1bee7; /* Soft lavender hover */
+}
+
+/* Footer - Ensuring it uses the same variable */
+.site-footer {
+  background-color: var(--theme-dark);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 50px;
+}
