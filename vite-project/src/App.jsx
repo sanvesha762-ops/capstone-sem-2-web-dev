@@ -15,23 +15,21 @@ import RestaurantSection from './Components/Itenary/RestaurantSection';
 function App() {
   const [city, setCity] = useState('');
 
-  const Home = () => (
-    <>
-      <ItineraryHeader city={city} setCity={setCity} />
-      <div className="itinerary-grid">
-        <HotelSection city={city} />
-        <TouristSection city={city} />
-        <RestaurantSection city={city} />
-      </div>
-    </>
-  );
-
   return (
     <div className="App">
       <Navbar />
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={
+            <>
+              <ItineraryHeader city={city} setCity={setCity} />
+              <div className="itinerary-grid">
+                <HotelSection city={city} />
+                <TouristSection city={city} />
+                <RestaurantSection city={city} />
+              </div>
+            </>
+          } />
           <Route path="/search" element={<Search />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/booking" element={<Booking />} />

@@ -3,7 +3,9 @@ import React from 'react';
 const TouristSection = ({ city }) => {
   const spots = [
     { id: 1, name: "City Landmark Park", category: "Nature & History", rating: 5, img: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=300&q=80" },
-    { id: 2, name: "Modern Art Gallery", category: "Culture", rating: 4, img: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=300&q=80" }
+    { id: 2, name: "Modern Art Gallery", category: "Culture", rating: 4, img: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=300&q=80" },
+    { id: 3, name: "Ancient Temple Ruins", category: "History", rating: 5, img: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=300&q=80" },
+    { id: 4, name: "Grand Bazaar", category: "Shopping", rating: 4, img: "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=300&q=80" }
   ];
 
   const handleTourClick = (name) => {
