@@ -1,40 +1,39 @@
 import React, { useState, useEffect } from 'react';
 
-const HotelSection = ({ city }) => {
-  const [hotels, setHotels] = useState([]);
-  const [bookingStatus, setBookingStatus] = useState({});
+const defaultHotels = [
+  { id: 1, name: "The Oberoi Grand", price: 18500, rating: 5, img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=300" },
+  { id: 2, name: "Taj Lake Palace", price: 24000, rating: 5, img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=300" },
+  { id: 3, name: "Leela Palace", price: 22000, rating: 5, img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=300" },
+  { id: 4, name: "ITC Grand Chola", price: 15000, rating: 4, img: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=300" }
+];
 
-  useEffect(() => {
-    fetch('http://localhost:4000/api/hotels' + (city ? `?city=${city}` : ''))
-      .then(res => res.json())
-      .then(data => setHotels(data))
-      .catch(err => console.error('Error fetching hotels:', err));
-  }, [city]);
+const HotelSection = ({ city }) => {
+  const [hotels, setHotels] = useState(defaultHotels);
+  const [bookingStatus, setBookingStatus] = useState({});
 
   const handleBook = (hotel) => {
     // Basic date formatting for display
     const date = "May 15 - May 20"; 
     const priceStr = `₹${hotel.price.toLocaleString('en-IN')}`;
     
-    fetch('http://localhost:4000/api/bookings', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        hotelName: hotel.name,
-        date: date,
-        price: priceStr
-      }),
-    })
-    .then(res => res.json())
-    .then(data => {
-      setBookingStatus(prev => ({ ...prev, [hotel.id]: 'Booked!' }));
-      setTimeout(() => {
-        setBookingStatus(prev => ({ ...prev, [hotel.id]: null }));
-      }, 3000);
-    })
-    .catch(err => console.error('Error creating booking:', err));
+    const newBooking = {
+      id: Date.now(),
+      hotel: hotel.name,
+      date: date,
+      status: 'Confirmed',
+      price: priceStr
+    };
+
+    const existingBookings = JSON.parse(localStorage.getItem('my_bookings')) || [
+      { id: 101, hotel: "The Oberoi Grand", date: "May 15 - May 20", status: "Confirmed", price: "₹92,500" }
+    ];
+    
+    localStorage.setItem('my_bookings', JSON.stringify([...existingBookings, newBooking]));
+
+    setBookingStatus(prev => ({ ...prev, [hotel.id]: 'Booked!' }));
+    setTimeout(() => {
+      setBookingStatus(prev => ({ ...prev, [hotel.id]: null }));
+    }, 3000);
   };
 
   return (

@@ -6,10 +6,10 @@ const Booking = () => {
   const [myBookings, setMyBookings] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/api/bookings')
-      .then(res => res.json())
-      .then(data => setMyBookings(data))
-      .catch(err => console.error('Error fetching bookings:', err));
+    const storedBookings = JSON.parse(localStorage.getItem('my_bookings')) || [
+      { id: 101, hotel: "The Oberoi Grand", date: "May 15 - May 20", status: "Confirmed", price: "₹92,500" }
+    ];
+    setMyBookings(storedBookings);
   }, []);
 
   return (
